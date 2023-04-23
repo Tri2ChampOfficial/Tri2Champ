@@ -1,5 +1,5 @@
 import React from "react";
-import Running1 from "./Running1.jpg";
+import Running1 from "./Running1.png";
 import "./section1.css";
 
 function Section2() {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./sec1.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import cy from "./sss.jpg";
+import cy from "./sss.png";
 
 function Section1() {
   return (

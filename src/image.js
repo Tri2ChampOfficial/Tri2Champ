@@ -1,5 +1,5 @@
 import React from "react";
-import bcycle from "./bcycle.jpg";
+import bcycle from "./bcycle.png";
 import "./image.css";
 
 function Image() {

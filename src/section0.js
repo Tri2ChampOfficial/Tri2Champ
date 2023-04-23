@@ -1,5 +1,5 @@
 import React from "react";
-import cycling3 from "./cycling3.jpg";
+import cycling3 from "./cycling3.png";
 import "./sec0.css";
 
 function Section0() {
