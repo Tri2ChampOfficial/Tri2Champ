@@ -11,6 +11,7 @@ import Footer from "./footer";
 import { scroller } from "react-scroll";
 import Card from './card';
 import Team from "./Team";
+import { Helmet } from "react-helmet";
 
 
 function App() {
@@ -23,9 +24,14 @@ function App() {
   };
   const currentPath = window.location.pathname;
   if (currentPath === "/team") {
-    return <Team data-testid="team-component" />;
+    return <Team/>;
   } else {
   return (
+    <>
+    <Helmet>
+    <title>Tri2champ</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+  </Helmet>
     <div style={{}} className="">
       <nav
         className="flex border-b-2  border-sky-400 items-center justify-between flex-wrap p-2 navbar bg-gradient-to-r from-zinc-900  via-indigo-950 to-zinc-900"
@@ -58,16 +64,8 @@ function App() {
                 Team
               </a>
             </li>
-            <li className=" pr-9 pt-4 pb-4">
-              <a
-                href="#"
-                className="hov under size"
-                onClick={() => scrollTo("event")}
-              >
-                Gallery
-              </a>
-            </li>
-            <li className="pr-2 pt-4 pb-4">
+            
+            <li className="pr-4 pt-4 pb-4">
               <a
                 href="#form"
                 className="hov under size"
@@ -96,13 +94,14 @@ function App() {
       <Card/>
       
       <Form />
-
+      
       <Footer />
     </div>
+    </>
   );
   }
 }
 
 
 
-export default App;
+export default App;

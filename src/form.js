@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from 'emailjs-com';
 import "./form.css";
 
 function Form() {
@@ -34,13 +35,28 @@ function Form() {
     return true;
   }
 
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_8o7769v', 'template_vwen0br', form.current, 'xOgT29h1E1cGEgTYW')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validate()) {
-      alert(
-        `Submitted form with Name: ${name}, Email: ${email}, Phone: ${phone}, Message: ${message}`
-      );
-      
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+      sendEmail(event);
+      alert("Message Sent Successfully")
     }
   };
 
@@ -50,8 +66,8 @@ function Form() {
     <>
       <form
         onSubmit={handleSubmit}
-        className="frm bg-teal-100 pb-10"
-        style={{ minHeight: "" }}
+        className="frm bg-emerald-100 pb-10"
+        ref={form}
         id="form"
       >
         <p style={{ }} className="col-4 fnt col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 pb-5 pt-10  d-block"><b>Contact Us</b></p>
@@ -77,8 +93,9 @@ function Form() {
               paddingBottom: "1%",
               backgroundColor:""
             }}
+            name="from_name"
             type="text"
-            id="name"
+            id="from_name"
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
@@ -96,6 +113,7 @@ function Form() {
               paddingTop: "1%",
               paddingBottom: "1%",
             }}
+            name="email"
             id="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
@@ -114,6 +132,7 @@ function Form() {
               paddingTop: "1%",
               paddingBottom: "1%",
             }}
+            name="phone"
             id="phone"
             value={phone}
             onChange={(event) => setPhone(event.target.value)}
@@ -125,6 +144,7 @@ function Form() {
           <textarea
             className="rounded bg-zinc-200 border-b-4 border-cyan-400 hover:border-2 pt-2 border-cyan-600"
             id="message"
+            name="message"
             style={{
               color: "black",
               paddingLeft: "1.5%",
@@ -148,4 +168,5 @@ function Form() {
   );
 }
 
-export default Form;
+
+export default Form;
