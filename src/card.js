@@ -31,12 +31,7 @@ const Card = () => {
                 <b style={{fontSize:'120%'}}>Swimming</b>
                 </h5>
                 <p className="card-text pb-3">
-                  AQUA Festival will bring together swimming, everyone is
-                  invited to join in fun swimming races, Team TRI2CHAMP,
-                  Welcoming Everyone we cordially invite you to our very biggest
-                  swimming event. AQUAFEST - SWIMATHON & AQUATHLON Chennai race
-                  venue allows us to deliver a first-class event experience to
-                  wrap up the 2023 season. 
+                  NO EVENTS
                 </p>
                 <a
                   href="https://www.townscript.com/e/Aquafest-140333"
