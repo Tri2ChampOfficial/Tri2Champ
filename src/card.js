@@ -1,7 +1,7 @@
 import React from "react";
 import "./card.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import pic from "./bgpic.png";
+import pic from "./emptybackground.jpeg";
 
 const Card = () => {
   return (
